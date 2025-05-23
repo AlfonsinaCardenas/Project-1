@@ -15,6 +15,7 @@ This tool includes:
 Here is the Youtube video demonstrating and explaining how this tool works:
 
 # Executing
+To run the app, use the following command:
 
 streamlit run Project1.py
 
