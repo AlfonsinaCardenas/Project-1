@@ -18,6 +18,7 @@ Here is the Youtube video demonstrating and explaining how this tool works:
 
 To run the app, use the following command:
 
-<pre> ``` streamlit run Project1.py ``` </pre>
+streamlit run Project1.py
+
 
 
