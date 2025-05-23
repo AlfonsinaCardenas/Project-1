@@ -1,6 +1,8 @@
-# Project 1 - Usability Testing Tool
+# Project 1 CAP4104- Usability Testing Tool
 
-The objective of this program was to create a Streamlit app to automate usability testing tasks.  
+This project is for the Human-Computer Interaction class at Florida International University.  The objective of this program was to create a Streamlit app to automate usability testing tasks.  
+
+# Details
 
 This tool includes:
   1. A home page explaining to the user what they will be doing.
@@ -10,8 +12,11 @@ This tool includes:
   5. An Exit Questionnaire page that will ask the user from a scale of 1-5, how satisfied they are with the task experience, and how difficult it was. They will also have a space to give further feedback.
   6. Lastly, we have a Report page that will summarize the users' answers. There are also some charts in the end to visualize this data.
 
-
 Here is the Youtube video demonstrating and explaining how this tool works:
+
+# Executing
+
+streamlit run Project1.py
 
 
 
