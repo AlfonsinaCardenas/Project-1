@@ -202,12 +202,6 @@ def main():
             # Bar Charts Section
             st.subheader("📊 Visualizations")
 
-        # Age Distribution
-        if not demographic_df.empty and "age" in demographic_df:
-                st.write("**Age Distribution**")
-                age_counts = demographic_df["age"].value_counts().sort_index()
-                st.bar_chart(age_counts)
-
             # Task Performance (Success)
         if not task_df.empty and "success" in task_df:
                 st.write("**Task Success Distribution**")
