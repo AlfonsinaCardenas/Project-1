@@ -202,13 +202,13 @@ def main():
             # Bar Charts Section
             st.subheader("📊 Visualizations")
 
-            # Task Performance (Success)
+            # Task Success (Yes, No, Partial)
         if not task_df.empty and "success" in task_df:
                 st.write("**Task Success Distribution**")
                 success_counts = task_df["success"].value_counts()
                 st.bar_chart(success_counts)
 
-            # Exit Questionnaire Ratings (Satisfaction & Difficulty)
+            # Exit Questionnaire Ratings (Satisfaction vs Difficulty)
         if not exit_df.empty:
                 st.write("**Average Satisfaction and Difficulty**")
                 avg_data = pd.DataFrame({
