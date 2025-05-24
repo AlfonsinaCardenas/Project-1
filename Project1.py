@@ -73,7 +73,7 @@ def main():
                     "consent_given": consent_given
                 }
                 save_to_csv(data_dict, CONSENT_CSV)
-                st.success("Consent submitted. Please proceed to next tab.")
+                st.success("Consent submitted. Please proceed to next tab called 'Demographics'.")
 
     with demographics:
         st.header("Demographic Questionnaire")
@@ -83,7 +83,7 @@ def main():
             age = st.number_input("Age", min_value=10, max_value=120)
             occupation = st.text_input("Occupation")
             familiarity = st.selectbox("Familiarity with similar tools",
-                                       ["None", "Beginner", "Intermediate", "Advanced"])
+                                       ["Not Familiar", "Somewhat Familiar", "Very Familiar"])
             submitted = st.form_submit_button("Submit Demographics")
             if submitted:
                 data_dict = {
@@ -94,7 +94,7 @@ def main():
                     "familiarity": familiarity
                 }
                 save_to_csv(data_dict, DEMOGRAPHIC_CSV)
-                st.success("Demographics submitted. Please proceed to next tab.")
+                st.success("Demographics submitted. Please proceed to next tab called 'Task'.")
 
     with tasks:
         st.header("Task Page")
@@ -145,8 +145,8 @@ def main():
 
         with st.form("exit_form"):
 
-            satisfaction = st.slider("How satisfied are you with the task experience?", 1, 5, 3)
-            difficulty = st.slider("How difficult was the task?", 1, 5, 3)
+            satisfaction = st.slider("Overall Satisfaction (1=Very Low, 5=Very High)", 1, 5, 3)
+            difficulty = st.slider("Overall Difficulty (1=Very Easy, 5=Very Hard)", 1, 5, 3)
             open_feedback = st.text_area("Any additional feedback or suggestions?")
 
             submitted_exit = st.form_submit_button("Submit Exit Questionnaire")
@@ -158,7 +158,7 @@ def main():
                     "open_feedback": open_feedback
                 }
                 save_to_csv(data_dict, EXIT_CSV)
-                st.success("Exit questionnaire data saved.")
+                st.success("Exit questionnaire data saved. You can now view the report.")
 
     with report:
         st.header("Usability Report - Aggregated Results")
@@ -202,13 +202,13 @@ def main():
             # Bar Charts Section
             st.subheader("📊 Visualizations")
 
-            # Task Success (Yes, No, Partial)
+        # Task Success (Yes, No, Partial)
         if not task_df.empty and "success" in task_df:
                 st.write("**Task Success Distribution**")
                 success_counts = task_df["success"].value_counts()
                 st.bar_chart(success_counts)
 
-            # Exit Questionnaire Ratings (Satisfaction vs Difficulty)
+        # Exit Questionnaire Ratings (Satisfaction vs. Difficulty)
         if not exit_df.empty:
                 st.write("**Average Satisfaction and Difficulty**")
                 avg_data = pd.DataFrame({
@@ -223,5 +223,8 @@ def main():
 
 if __name__ == "__main__":
     main()
+
+
+
 
 
