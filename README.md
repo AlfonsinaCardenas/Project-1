@@ -12,13 +12,7 @@ This tool includes:
   5. An Exit Questionnaire page that will ask the user from a scale of 1-5, how satisfied they are with the task experience, and how difficult it was. They will also have a space to give further feedback.
   6. Lastly, we have a Report page that will summarize the users' answers. There are also some charts in the end to visualize this data.
 
-Here is the Youtube video demonstrating and explaining how this tool works: https://youtu.be/F7271mPcYhA 
 
-# Executing
-
-To run the app, use the following command:
-
-streamlit run Project1.py
 
 
 
